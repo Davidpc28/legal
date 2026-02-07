@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin } from "lucide-react";
+import { IconPhone, IconMail, IconMapPin } from "@tabler/icons-react";
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
@@ -7,12 +7,11 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container-custom py-12 md:py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Brand */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <img src={logo} alt="Logo" className="w-44 h-auto" />
-            
             </div>
             <p className="text-primary-foreground/70 max-w-md">
               Despacho especializado en derecho de extranjería. Ayudamos a
@@ -26,24 +25,43 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Contacto</h4>
             <ul className="space-y-3 text-primary-foreground/70">
               <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4" />
+                <IconPhone size={18} />
                 <span>600 000 000</span>
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4" />
+                <IconMail size={18} />
                 <span>info@abogadaextranjeria.es</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 mt-0.5" />
-                <span>Madrid, España</span>
               </li>
             </ul>
           </div>
 
-          {/* Legal */}
-          <div>
-            <h4 className="font-semibold mb-4">Legal</h4>
-            <ul className="space-y-3 text-primary-foreground/70">
+          {/* Map */}
+          <div className="lg:col-span-1 space-y-3 text-primary-foreground/70">
+            <h4 className="font-semibold mb-4">Ubicación</h4>
+            <li className="flex items-start gap-2">
+              <IconMapPin size={18} className="mb-0.5" />
+              <span>Madrid, España</span>
+            </li>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2682.6469592716644!2d-3.803779524628362!3d40.292649963182896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd418ba3d8442cfb%3A0x9f260791e79920e7!2sAv.%20de%20Espa%C3%B1a%2C%20%3A9-11%2C%2028941%20Fuenlabrada%2C%20Madrid!5e1!3m2!1ses!2ses!4v1770484336929!5m2!1ses!2ses"
+              width="100%"
+              height="180"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="rounded-lg"
+            ></iframe>
+          </div>
+        </div>
+
+        <div className="border-t border-primary-foreground/10 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+            <p className="text-sm text-primary-foreground/50">
+              © {currentYear} Abogada Extranjería. Todos los derechos
+              reservados.
+            </p>
+            <ul className="flex flex-wrap justify-center md:justify-end gap-6 text-sm text-primary-foreground/70">
               <li>
                 <a
                   href="#"
@@ -70,12 +88,6 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-        </div>
-
-        <div className="border-t border-primary-foreground/10 mt-12 pt-8 text-center text-sm text-primary-foreground/50">
-          <p>
-            © {currentYear} Abogada Extranjería. Todos los derechos reservados.
-          </p>
         </div>
       </div>
     </footer>

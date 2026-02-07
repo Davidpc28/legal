@@ -1,31 +1,41 @@
 import { motion } from "framer-motion";
-import { Scale, Zap, Users, Award, Heart } from "lucide-react";
+import {
+  IconScale,
+  IconBolt as IconZap,
+  IconUsers,
+  IconAward,
+  IconHeart,
+} from "@tabler/icons-react";
 
 const reasons = [
   {
-    icon: Scale,
+    icon: IconScale,
     title: "Especialistas en extranjería",
-    description: "Nos dedicamos exclusivamente al derecho de extranjería. Conocemos la ley a fondo.",
+    description:
+      "Nos dedicamos exclusivamente al derecho de extranjería. Conocemos la ley a fondo.",
   },
   {
-    icon: Zap,
+    icon: IconZap,
     title: "Preparación rápida",
-    description: "Agilizamos la preparación de tu expediente para presentarlo a tiempo.",
+    description:
+      "Agilizamos la preparación de tu expediente para presentarlo a tiempo.",
   },
   {
-    icon: Users,
+    icon: IconUsers,
     title: "Atención personalizada",
-    description: "Cada caso es único. Te acompañamos de forma cercana en todo el proceso.",
+    description:
+      "Cada caso es único. Te acompañamos de forma cercana en todo el proceso.",
   },
   {
-    icon: Award,
+    icon: IconAward,
     title: "Experiencia probada",
     description: "Más de 500 casos de extranjería gestionados con éxito.",
   },
   {
-    icon: Heart,
+    icon: IconHeart,
     title: "Trato humano y cercano",
-    description: "Entendemos lo que significa este proceso para ti. Estamos contigo.",
+    description:
+      "Entendemos lo que significa este proceso para ti. Estamos contigo.",
   },
 ];
 
@@ -44,8 +54,8 @@ const WhyUsSection = () => {
             ¿Por qué elegirnos?
           </h2>
           <p className="text-lg text-primary-foreground/80">
-            Somos abogados especializados en extranjería. Nuestro objetivo es que consigas 
-            tu regularización con la máxima seguridad jurídica.
+            Somos abogados especializados en extranjería. Nuestro objetivo es
+            que consigas tu regularización con la máxima seguridad jurídica.
           </p>
         </motion.div>
 
@@ -60,14 +70,12 @@ const WhyUsSection = () => {
               className="bg-primary-foreground/10 backdrop-blur-sm rounded-xl p-6 border border-primary-foreground/10"
             >
               <div className="w-12 h-12 rounded-lg bg-primary-foreground/20 flex items-center justify-center mb-4">
-                <reason.icon className="w-6 h-6 text-primary-foreground" />
+                <reason.icon size={24} className="text-primary-foreground" />
               </div>
               <h3 className="font-sans text-lg font-semibold text-primary-foreground mb-2">
                 {reason.title}
               </h3>
-              <p className="text-primary-foreground/70">
-                {reason.description}
-              </p>
+              <p className="text-primary-foreground/70">{reason.description}</p>
             </motion.div>
           ))}
         </div>

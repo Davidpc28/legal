@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { IconMenu2, IconX } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
 
@@ -49,11 +49,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2">
-            <img
-              src={logo}
-              alt="Logo"
-              className={`w-full max-w-44 h-full `}
-            />
+            <img src={logo} alt="Logo" className={`w-full max-w-44 h-full `} />
           </a>
 
           {/* Desktop Navigation */}
@@ -84,12 +80,14 @@ const Header = () => {
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
-              <X
-                className={`w-6 h-6 ${isScrolled ? "text-foreground" : "text-primary-foreground"}`}
+              <IconX
+                size={24}
+                className={`${isScrolled ? "text-foreground" : "text-primary-foreground"}`}
               />
             ) : (
-              <Menu
-                className={`w-6 h-6 ${isScrolled ? "text-foreground" : "text-primary-foreground"}`}
+              <IconMenu2
+                size={24}
+                className={`${isScrolled ? "text-foreground" : "text-primary-foreground"}`}
               />
             )}
           </button>

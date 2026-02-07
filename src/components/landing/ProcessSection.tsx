@@ -1,30 +1,39 @@
 import { motion } from "framer-motion";
-import { ClipboardCheck, FileText, Send, Eye } from "lucide-react";
+import {
+  IconClipboardCheck,
+  IconFileText,
+  IconSend,
+  IconEye,
+} from "@tabler/icons-react";
 
 const steps = [
   {
     number: "01",
-    icon: ClipboardCheck,
+    icon: IconClipboardCheck,
     title: "Evaluación de tu caso",
-    description: "Analizamos tu situación y te indicamos si cumples los requisitos para la regularización.",
+    description:
+      "Analizamos tu situación y te indicamos si cumples los requisitos para la regularización.",
   },
   {
     number: "02",
-    icon: FileText,
+    icon: IconFileText,
     title: "Preparación del expediente",
-    description: "Reunimos toda la documentación necesaria y preparamos tu solicitud al detalle.",
+    description:
+      "Reunimos toda la documentación necesaria y preparamos tu solicitud al detalle.",
   },
   {
     number: "03",
-    icon: Send,
+    icon: IconSend,
     title: "Presentación",
-    description: "Presentamos tu solicitud en tiempo y forma durante el plazo oficial (abril-junio 2026).",
+    description:
+      "Presentamos tu solicitud en tiempo y forma durante el plazo oficial (abril-junio 2026).",
   },
   {
     number: "04",
-    icon: Eye,
+    icon: IconEye,
     title: "Seguimiento",
-    description: "Hacemos seguimiento de tu expediente hasta que recibas la resolución favorable.",
+    description:
+      "Hacemos seguimiento de tu expediente hasta que recibas la resolución favorable.",
   },
 ];
 
@@ -43,7 +52,8 @@ const ProcessSection = () => {
             Cómo trabajamos
           </h2>
           <p className="text-lg text-muted-foreground">
-            Un proceso claro y transparente para que sepas en todo momento en qué punto está tu caso.
+            Un proceso claro y transparente para que sepas en todo momento en
+            qué punto está tu caso.
           </p>
         </motion.div>
 
@@ -64,7 +74,7 @@ const ProcessSection = () => {
                 {/* Step number circle */}
                 <div className="relative inline-flex items-center justify-center mb-6">
                   <div className="w-20 h-20 rounded-full bg-card border-4 border-secondary flex items-center justify-center card-elevated">
-                    <step.icon className="w-8 h-8 text-secondary" />
+                    <step.icon size={32} className="text-secondary" />
                   </div>
                   <span className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary text-primary-foreground text-sm font-bold flex items-center justify-center">
                     {step.number}
@@ -74,9 +84,7 @@ const ProcessSection = () => {
                 <h3 className="font-sans text-xl font-semibold text-foreground mb-3">
                   {step.title}
                 </h3>
-                <p className="text-muted-foreground">
-                  {step.description}
-                </p>
+                <p className="text-muted-foreground">{step.description}</p>
               </motion.div>
             ))}
           </div>
