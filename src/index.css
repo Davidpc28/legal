@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Immigration Law Firm Design System
+   Professional, trustworthy, empathetic
+   Colors: Deep navy, soft teal, warm whites
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Core palette - Deep navy trust + soft teal hope */
+    --background: 210 33% 99%;
+    --foreground: 215 35% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 35% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 35% 18%;
+
+    /* Primary: Deep navy - trust & professionalism */
+    --primary: 215 60% 25%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Soft teal - hope & new beginnings */
+    --secondary: 168 45% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted: Soft gray-blue backgrounds */
+    --muted: 210 25% 96%;
+    --muted-foreground: 215 20% 45%;
+
+    /* Accent: Warm teal for CTAs */
+    --accent: 168 55% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive: Soft red for urgency */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & inputs */
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 168 55% 40%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens for this project */
+    --hero-gradient: linear-gradient(135deg, hsl(215 60% 25%) 0%, hsl(215 50% 35%) 50%, hsl(168 45% 35%) 100%);
+    --hero-overlay: linear-gradient(180deg, hsla(215, 60%, 25%, 0.95) 0%, hsla(215, 50%, 30%, 0.9) 100%);
+    --card-shadow: 0 4px 24px -4px hsla(215, 60%, 25%, 0.08);
+    --card-shadow-hover: 0 8px 32px -4px hsla(215, 60%, 25%, 0.15);
+    --cta-glow: 0 4px 20px -4px hsla(168, 55%, 40%, 0.4);
+    --text-gradient: linear-gradient(135deg, hsl(168 55% 40%) 0%, hsl(168 45% 50%) 100%);
+    
+    /* Section backgrounds */
+    --section-light: 210 33% 99%;
+    --section-subtle: 210 25% 97%;
+    --section-accent: 168 40% 97%;
+
+    /* Trust elements */
+    --trust-badge: 168 45% 45%;
+    --success: 145 60% 42%;
+    --warning: 38 92% 50%;
+    
+    /* Urgency */
+    --urgency: 0 72% 51%;
+    --urgency-bg: 0 72% 97%;
+
+    /* Sidebar defaults */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 215 35% 12%;
+    --foreground: 210 30% 96%;
+    --card: 215 35% 15%;
+    --card-foreground: 210 30% 96%;
+    --popover: 215 35% 15%;
+    --popover-foreground: 210 30% 96%;
+    --primary: 168 55% 50%;
+    --primary-foreground: 215 35% 12%;
+    --secondary: 215 40% 30%;
+    --secondary-foreground: 210 30% 96%;
+    --muted: 215 35% 20%;
+    --muted-foreground: 210 20% 65%;
+    --accent: 168 55% 45%;
+    --accent-foreground: 215 35% 12%;
+    --destructive: 0 62.8% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 215 35% 22%;
+    --input: 215 35% 22%;
+    --ring: 168 55% 45%;
+    --sidebar-background: 215 35% 12%;
+    --sidebar-foreground: 210 30% 96%;
+    --sidebar-primary: 168 55% 50%;
+    --sidebar-primary-foreground: 215 35% 12%;
+    --sidebar-accent: 215 35% 20%;
+    --sidebar-accent-foreground: 210 30% 96%;
+    --sidebar-border: 215 35% 22%;
+    --sidebar-ring: 168 55% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-4 py-16 md:px-8 md:py-24 lg:py-32;
+  }
+
+  .container-custom {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .text-gradient {
+    background: var(--text-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-overlay {
+    background: var(--hero-overlay);
+  }
+
+  .card-elevated {
+    box-shadow: var(--card-shadow);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .card-elevated:hover {
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-2px);
+  }
+
+  .cta-glow {
+    box-shadow: var(--cta-glow);
+  }
+
+  .urgency-pulse {
+    animation: pulse-urgency 2s infinite;
+  }
+
+  @keyframes pulse-urgency {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  .fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
