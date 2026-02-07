@@ -1,29 +1,39 @@
 import { motion } from "framer-motion";
-import { Briefcase, Shield, Heart, Home } from "lucide-react";
+import {
+  IconBriefcase,
+  IconShield,
+  IconHeart,
+  IconHome,
+} from "@tabler/icons-react";
+import { AnimatedMarker } from "@/components/AnimatedMarker";
 
 const benefits = [
   {
-    icon: Briefcase,
+    icon: IconBriefcase,
     title: "Permiso de trabajo",
-    description: "Podrás trabajar legalmente con contrato y acceso a la Seguridad Social.",
+    description:
+      "Podrás trabajar legalmente con contrato y acceso a la Seguridad Social.",
     color: "bg-secondary/10 text-secondary",
   },
   {
-    icon: Shield,
+    icon: IconShield,
     title: "Seguridad jurídica",
-    description: "Vivirás sin miedo a sanciones, con todos tus derechos garantizados.",
+    description:
+      "Vivirás sin miedo a sanciones, con todos tus derechos garantizados.",
     color: "bg-primary/10 text-primary",
   },
   {
-    icon: Home,
+    icon: IconHome,
     title: "Residencia legal",
-    description: "Tendrás un permiso de residencia renovable y la opción de reagrupar familia.",
+    description:
+      "Tendrás un permiso de residencia renovable y la opción de reagrupar familia.",
     color: "bg-success/10 text-success",
   },
   {
-    icon: Heart,
+    icon: IconHeart,
     title: "Estabilidad familiar",
-    description: "Tus familiares directos también pueden beneficiarse del proceso.",
+    description:
+      "Tus familiares directos también pueden beneficiarse del proceso.",
     color: "bg-warning/10 text-warning",
   },
 ];
@@ -43,8 +53,14 @@ const BenefitsSection = () => {
             Beneficios de la regularización
           </h2>
           <p className="text-lg text-muted-foreground">
-            Regularizar tu situación te abre las puertas a una vida plena en España, 
-            con derechos, seguridad y oportunidades para ti y tu familia.
+            Regularizar tu situación te abre las puertas a una{" "}
+            <span>
+              <AnimatedMarker color="secondary">
+                vida plena
+              </AnimatedMarker>
+            </span>{" "}
+            en España, con derechos, seguridad y oportunidades para ti y tu
+            familia.
           </p>
         </motion.div>
 
@@ -58,8 +74,10 @@ const BenefitsSection = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="bg-card rounded-xl p-8 card-elevated flex gap-6"
             >
-              <div className={`w-14 h-14 rounded-xl ${benefit.color} flex items-center justify-center flex-shrink-0`}>
-                <benefit.icon className="w-7 h-7" />
+              <div
+                className={`w-14 h-14 rounded-xl ${benefit.color} flex items-center justify-center flex-shrink-0`}
+              >
+                <benefit.icon size={28} />
               </div>
               <div>
                 <h3 className="font-sans text-xl font-semibold text-foreground mb-2">

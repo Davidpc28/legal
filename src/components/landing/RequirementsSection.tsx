@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, AlertCircle } from "lucide-react";
+import { IconCheck, IconAlertCircle } from "@tabler/icons-react";
 
 const requirements = [
   "Estar en situación irregular en España",
@@ -17,8 +17,8 @@ const alsoApplies = [
 const RequirementsSection = () => {
   return (
     <section id="requisitos" className="section-padding bg-section-light">
-      <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div className="container-custom ">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start  relative">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -29,8 +29,8 @@ const RequirementsSection = () => {
               ¿Quién puede solicitar la regularización?
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Comprueba si cumples los requisitos básicos. Si tienes dudas sobre tu caso particular, 
-              te ayudamos a evaluarlo sin compromiso.
+              Comprueba si cumples los requisitos básicos. Si tienes dudas sobre
+              tu caso particular, te ayudamos a evaluarlo sin compromiso.
             </p>
 
             <div className="space-y-4 mb-8">
@@ -44,7 +44,7 @@ const RequirementsSection = () => {
                   className="flex items-start gap-3"
                 >
                   <div className="w-6 h-6 rounded-full bg-success/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Check className="w-4 h-4 text-success" />
+                    <IconCheck size={16} className="text-success" />
                   </div>
                   <span className="text-foreground">{req}</span>
                 </motion.div>
@@ -53,12 +53,19 @@ const RequirementsSection = () => {
 
             <div className="bg-section-accent rounded-xl p-6">
               <div className="flex items-start gap-3 mb-4">
-                <AlertCircle className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
-                <span className="font-semibold text-foreground">También pueden solicitarlo:</span>
+                <IconAlertCircle
+                  size={20}
+                  className="text-secondary flex-shrink-0 mt-0.5"
+                />
+                <span className="font-semibold text-foreground">
+                  También pueden solicitarlo:
+                </span>
               </div>
               <ul className="space-y-2 ml-8">
                 {alsoApplies.map((item, index) => (
-                  <li key={index} className="text-muted-foreground">• {item}</li>
+                  <li key={index} className="text-muted-foreground">
+                    • {item}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -69,35 +76,40 @@ const RequirementsSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative"
+            className="sticky top-12 h-auto"
           >
-            <div className="bg-card rounded-2xl p-8 card-elevated">
+            <div className="bg-card rounded-2xl p-8 card-elevated ">
               <h3 className="font-serif text-2xl font-bold text-foreground mb-6">
                 Visa de búsqueda de empleo
               </h3>
               <p className="text-muted-foreground mb-6">
-                La regularización extraordinaria incluye la posibilidad de obtener una 
-                <span className="font-semibold text-foreground"> visa de búsqueda de empleo de hasta 12 meses</span>, 
-                dándote tiempo para encontrar trabajo y establecerte legalmente.
+                La regularización extraordinaria incluye la posibilidad de
+                obtener una
+                <span className="font-semibold text-foreground">
+                  {" "}
+                  visa de búsqueda de empleo de hasta 12 meses
+                </span>
+                , dándote tiempo para encontrar trabajo y establecerte
+                legalmente.
               </p>
               <div className="flex items-center gap-4 text-sm">
                 <div className="flex items-center gap-2 text-success">
-                  <Check className="w-4 h-4" />
+                  <IconCheck size={16} />
                   <span>Trabajo legal</span>
                 </div>
                 <div className="flex items-center gap-2 text-success">
-                  <Check className="w-4 h-4" />
+                  <IconCheck size={16} />
                   <span>Seguridad Social</span>
                 </div>
                 <div className="flex items-center gap-2 text-success">
-                  <Check className="w-4 h-4" />
+                  <IconCheck size={16} />
                   <span>Derechos laborales</span>
                 </div>
               </div>
             </div>
 
             {/* Decorative element */}
-            <div className="absolute -z-10 -top-4 -right-4 w-full h-full bg-secondary/10 rounded-2xl" />
+            {/* <div className="absolute -z-10 -top-4 -right-4 w-full h-full bg-secondary/10 rounded-2xl" /> */}
           </motion.div>
         </div>
       </div>

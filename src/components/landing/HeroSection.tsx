@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, ArrowRight } from "lucide-react";
+import { IconBrandWhatsapp, IconArrowRight } from "@tabler/icons-react";
+import { AnimatedMarker } from "@/components/AnimatedMarker";
 import heroImage from "@/assets/hero-immigration.jpg";
 
 const HeroSection = () => {
@@ -64,7 +65,9 @@ const HeroSection = () => {
             El Gobierno ha aprobado una oportunidad única para regularizarte.
             <span className="font-semibold">
               {" "}
-              Solo del 1 de abril al 30 de junio de 2026.
+              <AnimatedMarker color="secondary">
+                Solo del 1 de abril al 30 de junio de 2026.
+              </AnimatedMarker>
             </span>{" "}
             No habrá prórroga. Prepara tu caso ahora con nuestra ayuda legal
             especializada.
@@ -82,7 +85,7 @@ const HeroSection = () => {
               className="bg-accent hover:bg-accent/90 text-accent-foreground cta-glow text-lg px-8 py-6 font-semibold"
             >
               Comprueba si puedes regularizarte
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <IconArrowRight className="ml-2 h-5 w-5" />
             </Button>
 
             <Button
@@ -91,7 +94,7 @@ const HeroSection = () => {
               onClick={openWhatsApp}
               className="border-primary-foreground/30  hover:bg-primary-foreground/10 text-lg px-8 py-6"
             >
-              <MessageCircle className="mr-2 h-5 w-5" />
+              <IconBrandWhatsapp className="mr-2 h-5 w-5" />
               Contactar por WhatsApp
             </Button>
           </motion.div>
@@ -104,10 +107,6 @@ const HeroSection = () => {
           >
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-success" />
-              <span className="text-sm">+500 casos gestionados</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-success" />
               <span className="text-sm">Especialistas en extranjería</span>
             </div>
           </motion.div>
@@ -117,7 +116,7 @@ const HeroSection = () => {
       {/* Scroll indicator */}
       <button
         onClick={scrollToWhatIs}
-        className="absolute bottom-8 flex items-end justify-center h-24 w-full left-1/2 -translate-x-1/2 cursor-pointer bg-transparent border-none"
+        className=" flex items-end justify-center h-24 w-24 absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer bg-transparent border-none"
       >
         <motion.div
           initial={{ opacity: 0 }}
