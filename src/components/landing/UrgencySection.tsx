@@ -1,3 +1,6 @@
+"use client";
+
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   IconAlertTriangle,
@@ -7,12 +10,6 @@ import {
 import { Button } from "@/components/ui/button";
 
 const UrgencySection = () => {
-  const scrollToForm = () => {
-    document
-      .getElementById("contact-form")
-      ?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section className="section-padding bg-urgency-bg">
       <div className="container-custom">
@@ -76,10 +73,10 @@ const UrgencySection = () => {
 
           <Button
             size="lg"
-            onClick={scrollToForm}
+            asChild
             className="bg-urgency hover:bg-urgency/90 text-primary-foreground text-lg px-10 py-6 font-semibold"
           >
-            Quiero preparar mi caso ahora
+            <Link href="/pre-evaluacion">Haz tu pre-evaluación gratuita</Link>
           </Button>
         </motion.div>
       </div>

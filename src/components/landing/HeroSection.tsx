@@ -1,3 +1,6 @@
+"use client";
+
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { IconBrandWhatsapp, IconArrowRight } from "@tabler/icons-react";
@@ -5,12 +8,6 @@ import { AnimatedMarker } from "@/components/AnimatedMarker";
 import heroImage from "@/assets/hero-immigration.jpg";
 
 const HeroSection = () => {
-  const scrollToForm = () => {
-    document
-      .getElementById("contact-form")
-      ?.scrollIntoView({ behavior: "smooth" });
-  };
-
   const scrollToWhatIs = () => {
     document.getElementById("que-es")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -27,7 +24,7 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src={heroImage}
+          src={heroImage.src}
           alt="Inmigrantes felices en España"
           className="w-full h-full object-cover"
         />
@@ -81,11 +78,13 @@ const HeroSection = () => {
           >
             <Button
               size="lg"
-              onClick={scrollToForm}
+              asChild
               className="bg-accent hover:bg-accent/90 text-accent-foreground cta-glow text-lg px-8 py-6 font-semibold"
             >
-              Comprueba si puedes regularizarte
-              <IconArrowRight className="ml-2 h-5 w-5" />
+              <Link href="/pre-evaluacion" className="inline-flex items-center">
+                Comprueba si puedes optar (pre-evaluación)
+                <IconArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
 
             <Button

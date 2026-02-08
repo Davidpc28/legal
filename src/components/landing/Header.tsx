@@ -1,20 +1,25 @@
+"use client";
+
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { label: "¿Qué es?", href: "#que-es" },
+  { label: "¿Qué es?", href: "/#que-es" },
   { label: "Requisitos", href: "#requisitos" },
-  { label: "Beneficios", href: "#beneficios" },
-  { label: "Por qué nosotros", href: "#por-que-nosotros" },
-  { label: "Proceso", href: "#proceso" },
+  { label: "Beneficios", href: "/#beneficios" },
+  { label: "Por qué nosotros", href: "/#por-que-nosotros" },
+  { label: "Proceso", href: "/#proceso" },
 ];
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,10 +29,7 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToForm = () => {
-    document
-      .getElementById("contact-form")
-      ?.scrollIntoView({ behavior: "smooth" });
+  const handlePreEvalClick = () => {
     setIsMobileMenuOpen(false);
   };
 
@@ -38,6 +40,8 @@ const Header = () => {
     }
     setIsMobileMenuOpen(false);
   };
+  const isDarkMode = pathname === "/" || pathname.includes('regularizacion-extranjeria');
+
 
   return (
     <header
@@ -49,27 +53,38 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2">
-            <img src={logo} alt="Logo" className={`w-full max-w-44 h-full `} />
+            <img
+              src={logo.src}
+              alt="Logo"
+              className={`w-full max-w-44 h-full `}
+            />
           </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <button
+              <Link
                 key={link.href}
-                onClick={() => handleNavClick(link.href)}
+                href={link.href}
                 className={`text-sm font-medium transition-colors hover:text-secondary ${
-                  isScrolled ? "text-foreground" : "text-primary-foreground/90"
+                  isDarkMode ?
+                    isScrolled
+                      ? "text-foreground"
+                      : "text-primary-foreground/90"
+                      :'text-foreground'
+
                 }`}
               >
                 {link.label}
-              </button>
+              </Link>
             ))}
             <Button
-              onClick={scrollToForm}
+              asChild
               className="bg-accent hover:bg-accent/90 text-accent-foreground"
             >
-              Contactar
+              <Link href="/pre-evaluacion" onClick={handlePreEvalClick}>
+                Pre-evaluación gratuita
+              </Link>
             </Button>
           </nav>
 
@@ -113,10 +128,12 @@ const Header = () => {
               </button>
             ))}
             <Button
-              onClick={scrollToForm}
+              asChild
               className="bg-accent hover:bg-accent/90 text-accent-foreground w-full mt-2"
             >
-              Contactar
+              <Link href="/pre-evaluacion" onClick={handlePreEvalClick}>
+                Pre-evaluación gratuita
+              </Link>
             </Button>
           </nav>
         </motion.div>

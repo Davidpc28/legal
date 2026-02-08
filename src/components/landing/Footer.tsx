@@ -1,4 +1,10 @@
-import { IconPhone, IconMail, IconMapPin } from "@tabler/icons-react";
+import Link from "next/link";
+import {
+  IconPhone,
+  IconMail,
+  IconMapPin,
+  IconClipboardCheck,
+} from "@tabler/icons-react";
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
@@ -11,7 +17,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <img src={logo} alt="Logo" className="w-44 h-auto" />
+              <img src={logo.src} alt="Logo" className="w-44 h-auto" />
             </div>
             <p className="text-primary-foreground/70 max-w-md">
               Despacho especializado en derecho de extranjería. Ayudamos a
@@ -20,9 +26,21 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Contact */}
+          {/* Pre-evaluación + Contacto */}
           <div>
-            <h4 className="font-semibold mb-4">Contacto</h4>
+            <h4 className="font-semibold mb-4">Pre-evaluación</h4>
+            <p className="text-primary-foreground/70 mb-4">
+              Comprueba en pocos pasos si puedes optar a la regularización
+              extraordinaria 2026.
+            </p>
+            <Link
+              href="/pre-evaluacion"
+              className="inline-flex items-center gap-2 text-accent-foreground bg-accent/90 hover:bg-accent px-4 py-2 rounded-lg font-medium text-sm transition-colors"
+            >
+              <IconClipboardCheck size={18} />
+              Haz tu pre-evaluación gratuita
+            </Link>
+            <h4 className="font-semibold mb-4 mt-8">Contacto</h4>
             <ul className="space-y-3 text-primary-foreground/70">
               <li className="flex items-center gap-2">
                 <IconPhone size={18} />

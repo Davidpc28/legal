@@ -1,3 +1,5 @@
+"use client";
+
 import { IconBrandWhatsapp } from "@tabler/icons-react";
 
 const WhatsAppButton = () => {

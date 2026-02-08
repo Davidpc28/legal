@@ -2,7 +2,11 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -14,8 +18,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Geist', 'sans-serif'],
-        serif: ['Rethink Sans', 'sans-serif'],
+        sans: ["Geist", "sans-serif"],
+        serif: ["Rethink Sans", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -67,10 +71,10 @@ export default {
         urgency: "hsl(var(--urgency))",
       },
       backgroundColor: {
-        'section-light': "hsl(var(--section-light))",
-        'section-subtle': "hsl(var(--section-subtle))",
-        'section-accent': "hsl(var(--section-accent))",
-        'urgency-bg': "hsl(var(--urgency-bg))",
+        "section-light": "hsl(var(--section-light))",
+        "section-subtle": "hsl(var(--section-subtle))",
+        "section-accent": "hsl(var(--section-accent))",
+        "urgency-bg": "hsl(var(--urgency-bg))",
       },
       borderRadius: {
         lg: "var(--radius)",
