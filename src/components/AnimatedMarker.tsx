@@ -1,3 +1,5 @@
+"use client";
+
 import { ReactNode, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
@@ -21,10 +23,7 @@ export const AnimatedMarker = ({
   };
 
   return (
-    <motion.span
-      ref={ref}
-      className="relative inline-block"
-    >
+    <motion.span ref={ref} className="relative inline-block">
       <motion.span
         className={`relative px-1 py-0.5 ${bgColor[color]}`}
         initial={{ backgroundSize: "0% 100%" }}
@@ -39,7 +38,8 @@ export const AnimatedMarker = ({
         style={{
           background: isInView
             ? {
-                accent: "linear-gradient(90deg, transparent 0%, rgba(168, 142, 84, 0.3) 50%, transparent 100%)",
+                accent:
+                  "linear-gradient(90deg, transparent 0%, rgba(168, 142, 84, 0.3) 50%, transparent 100%)",
                 secondary:
                   "linear-gradient(90deg, transparent 0%, rgba(111, 168, 155, 0.3) 50%, transparent 100%)",
                 primary:

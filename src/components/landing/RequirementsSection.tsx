@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { IconCheck, IconAlertCircle } from "@tabler/icons-react";
 

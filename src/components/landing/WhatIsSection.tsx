@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import {
   IconCalendar,
@@ -51,9 +53,7 @@ const WhatIsSection = () => {
             permite a personas en situación irregular obtener un permiso de
             residencia y trabajo. Esta oportunidad{" "}
             <span className="font-semibold text-foreground">
-              <AnimatedMarker color="accent">
-                no se repetirá
-              </AnimatedMarker>
+              <AnimatedMarker color="accent">no se repetirá</AnimatedMarker>
             </span>
             .
           </p>

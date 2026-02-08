@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import {
   IconBriefcase,
@@ -55,9 +57,7 @@ const BenefitsSection = () => {
           <p className="text-lg text-muted-foreground">
             Regularizar tu situación te abre las puertas a una{" "}
             <span>
-              <AnimatedMarker color="secondary">
-                vida plena
-              </AnimatedMarker>
+              <AnimatedMarker color="secondary">vida plena</AnimatedMarker>
             </span>{" "}
             en España, con derechos, seguridad y oportunidades para ti y tu
             familia.
